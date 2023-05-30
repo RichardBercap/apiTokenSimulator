@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ClienteController;
+use \App\Http\Controllers\TokenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,5 @@ Route::get('/', function () {
 
 Route::prefix('api/v1')->group(function () {
     Route::post('storeclient',[ClienteController::class,'create']);
+    Route::post('generateToken',[TokenController::class,'generate']);
 });
